@@ -68,28 +68,31 @@ public class BankAccount {
 
 ---
 
-## ✅ OOPS Principle: Inheritance
 
-### 🔹 What is Inheritance?
-
-**Inheritance** is an OOP principle that allows one class (**child/subclass**) to acquire the properties and behaviors (fields and methods) of another class (**parent/superclass**).
-
-It promotes **code reuse** — you write common functionality once in the parent and reuse or extend it in child classes.
-
-In Java, inheritance is implemented using the **`extends`** keyword.
+# ✅ OOPS Principle: Inheritance & Composition
 
 ---
 
-### 🔹 Why is Inheritance Important?
+## 🔹 What is Inheritance?
 
-- ✅ **Code Reuse:** Avoids duplicating common logic.
-- ✅ **Method Overriding:** Allows a child to change the parent’s behavior.
-- ✅ **Polymorphism:** Enables treating a child as its parent type — a key for loose coupling and flexible design.
-- ✅ **Hierarchy Representation:** Models real-world “is-a” relationships (e.g., `Dog` is an `Animal`).
+**Inheritance** lets a class (**child/subclass**) acquire properties and behavior of another class (**parent/superclass**) — reusing and customizing logic.
+
+**Java keyword:** `extends`.
 
 ---
 
-### 🔹 Example
+## 🔹 Why is Inheritance Important?
+
+| Benefit              | Explanation                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| ✅ Code Reuse         | Write common logic once in parent, reuse in child.                          |
+| ✅ Method Overriding  | Child can change/extend parent behavior.                                    |
+| ✅ Polymorphism       | Parent reference can point to child instance, enabling flexible design.     |
+| ✅ Hierarchy Modeling | Represents **is-a** relationships — `Dog` **is an** `Animal`.              |
+
+---
+
+## 🔹 Example: Inheritance
 
 ```java
 class Vehicle {
@@ -114,42 +117,103 @@ public class InheritanceDemo {
         Vehicle v = new Car();
         v.start(); // Car starts
 
-        // v.openSunroof(); // Compilation error: parent reference can't access child-specific methods
+        // v.openSunroof(); // Compile-time error
     }
 }
 ```
 
 ✅ **Key point:**  
-- `Car` inherits `start()` but overrides it.
-- Parent reference `Vehicle` can hold a `Car` object — this is **runtime polymorphism**.
-- Parent reference can’t access child-specific methods unless downcast.
+- `Car` **is a** `Vehicle`.
+- Parent reference can’t access child-only methods without downcasting.
+- This demonstrates **runtime polymorphism**.
 
 ---
 
-### 🔹 Limitations of Inheritance
+## 🔹 Limitations of Inheritance
 
-- ❌ **Tight Coupling:** Subclass is tightly bound to parent.
-- ❌ **Fragile Base Class:** Changes in parent can break child classes.
-- ❌ **Single Inheritance:** Java does not allow multiple inheritance with classes (to avoid the diamond problem).
-- ✅ Use **Interfaces** or **Composition** for better flexibility when multiple inheritance is needed.
-
----
-
-### 🔹 Best Practice
-
-✅ Prefer **composition over inheritance** when the relationship is not truly **is-a**.  
-✅ Use **abstract classes** for common behavior that should not be instantiated directly.
+| Limitation             | Why it’s an issue                                                          |
+|------------------------|-----------------------------------------------------------------------------|
+| ❌ Tight Coupling       | Subclass depends heavily on parent.                                         |
+| ❌ Fragile Base Class   | Parent changes may break subclasses.                                        |
+| ❌ Single Inheritance   | Java does not allow multiple inheritance with classes (avoids diamond problem). |
 
 ---
 
-### 🔹 Bonus: `super` keyword
+## 🔹 Best Practice
 
-- `super` is used in the child to refer to the parent class.
-- Used to:
-  - Access parent’s methods/fields.
-  - Call parent constructor: `super()`.
+✅ Use **composition** for **has-a** relationships or when multiple inheritance is needed.
+
+✅ Use **interfaces** for multiple inheritance of behavior.
+
+✅ Use **abstract classes** for shared behavior that should not be instantiated directly.
 
 ---
+
+## 🔹 Bonus: `super` keyword
+
+- Access parent methods: `super.start()`.
+- Call parent constructor: `super()`.
+
+---
+
+# 🔹 What is Composition?
+
+**Composition** means one class **has a reference** to another class — instead of inheriting, it **uses** it.
+
+This models **has-a** relationships.
+
+✅ **Flexible**, **loose coupling**, easier to change.
+
+---
+
+## 🔹 Example: Composition
+
+```java
+class Engine {
+    void run() {
+        System.out.println("Engine running");
+    }
+}
+
+class Car {
+    private Engine engine; // Car has-a Engine
+
+    public Car() {
+        this.engine = new Engine();
+    }
+
+    void start() {
+        engine.run();
+        System.out.println("Car is moving");
+    }
+}
+
+public class CompositionDemo {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.start(); // Engine running \n Car is moving
+    }
+}
+```
+
+✅ `Car` **has a** `Engine`.  
+✅ More flexible than inheritance — you can swap `Engine` easily.
+
+---
+
+# ✅ Is-A vs Has-A Summary
+
+| Aspect              | Inheritance (**Is-A**)                     | Composition (**Has-A**)                |
+|---------------------|---------------------------------------------|----------------------------------------|
+| Definition          | Child **is a** type of Parent.              | One class **has a** reference to another. |
+| Example             | `Car` **is a** `Vehicle`.                  | `Car` **has a** `Engine`.              |
+| Flexibility         | Less flexible, tight coupling.              | More flexible, loose coupling.         |
+| Multiple Behavior   | Limited (no multiple inheritance).          | Supports multiple behaviors.           |
+| Best for            | Strict hierarchies, common functionality.   | Reusable, replaceable parts.           |
+
+✅ **Key Principle:**  
+**Favor composition over inheritance** when the relationship is **not truly “is-a.”**
+
 
 ## ✅ OOPS Principle: Polymorphism
 
@@ -158,7 +222,7 @@ public class InheritanceDemo {
 **Polymorphism** means **“many forms.”**  
 It’s an OOP concept where the **same interface, method, or operation behaves differently based on the object that implements it**.
 
-In Java, there are **two types**:
+In Java, there are **two types**:\
 1️⃣ **Compile-Time Polymorphism (Static):** Method Overloading  
 2️⃣ **Runtime Polymorphism (Dynamic):** Method Overriding
 
@@ -389,6 +453,175 @@ class Dog implements Animal {
 | Focus | Focus on **what** an object does | Focus on **how** to protect internal data |
 
 ---
+
+
+# ✅ OOPS Principles & SOLID Design
+
+---
+
+## 1️⃣ S — Single Responsibility Principle (SRP)
+
+**SRP:** A class should have only **one reason to change**.
+
+### 🔹 OOPS Support
+
+✅ **Encapsulation** groups related data + behavior, hides details, keeps logic cohesive.
+
+### ✅ Example
+
+```java
+class ReportGenerator {
+    String generateReport() {
+        // Generate report
+    }
+}
+
+class ReportPrinter {
+    void printReport(String report) {
+        // Print report
+    }
+}
+```
+
+Separate responsibilities → clear SRP.
+
+---
+
+## 2️⃣ O — Open/Closed Principle (OCP)
+
+**OCP:** Classes should be **open for extension, closed for modification**.
+
+### 🔹 OOPS Support
+
+✅ **Inheritance, Polymorphism:** Extend behavior via child classes.
+
+✅ **Abstraction:** Use interfaces/abstract classes.
+
+### ✅ Example
+
+```java
+interface Shape {
+    double area();
+}
+
+class Rectangle implements Shape {
+    public double area() { return width * height; }
+}
+
+class Circle implements Shape {
+    public double area() { return Math.PI * radius * radius; }
+}
+
+class AreaCalculator {
+    double calculateArea(Shape shape) { return shape.area(); }
+}
+```
+
+Add new `Shape` without changing `AreaCalculator`.
+
+---
+
+## 3️⃣ L — Liskov Substitution Principle (LSP)
+
+**LSP:** Subclasses must be substitutable for their base classes.
+
+### 🔹 OOPS Support
+
+✅ **Inheritance, Polymorphism:** Use proper **is-a** relationships.
+
+✅ Keep subclass behavior compatible.
+
+### ✅ Example
+
+```java
+interface Bird {}
+
+interface Flyable {
+    void fly();
+}
+
+class Sparrow implements Bird, Flyable {
+    public void fly() { /* fly */ }
+}
+
+class Penguin implements Bird {
+    // Does not fly — no LSP violation
+}
+```
+
+---
+
+## 4️⃣ I — Interface Segregation Principle (ISP)
+
+**ISP:** No client should depend on methods they don’t use.
+
+### 🔹 OOPS Support
+
+✅ Use **abstraction & multiple small interfaces**.
+
+### ✅ Example
+
+```java
+interface Printable {
+    void print();
+}
+
+interface Scannable {
+    void scan();
+}
+
+class SimplePrinter implements Printable {
+    public void print() { /* ... */ }
+}
+```
+
+---
+
+## 5️⃣ D — Dependency Inversion Principle (DIP)
+
+**DIP:** High-level modules & low-level modules depend on **abstractions**.
+
+### 🔹 OOPS Support
+
+✅ Use **abstraction + composition (dependency injection)**.
+
+### ✅ Example
+
+```java
+interface Keyboard {}
+interface Monitor {}
+
+class WiredKeyboard implements Keyboard {}
+class LEDMonitor implements Monitor {}
+
+class Computer {
+    private final Keyboard keyboard;
+    private final Monitor monitor;
+
+    public Computer(Keyboard keyboard, Monitor monitor) {
+        this.keyboard = keyboard;
+        this.monitor = monitor;
+    }
+}
+```
+
+High-level `Computer` depends on abstractions, not concrete classes.
+
+---
+
+## ✅ Summary: OOPS & SOLID
+
+| SOLID Principle | Supported By                               |
+|-----------------|--------------------------------------------|
+| SRP             | Encapsulation                              |
+| OCP             | Inheritance, Polymorphism, Abstraction     |
+| LSP             | Inheritance, Polymorphism                  |
+| ISP             | Abstraction, Small Interfaces              |
+| DIP             | Abstraction, Composition                   |
+
+✅ **Key takeaway:** SOLID principles use OOPS building blocks to make code **maintainable**, **extensible**, **testable**, and **robust**.
+
+
 
 ## ✅ Core Java: `final`, `static`, `this`, `super`
 
