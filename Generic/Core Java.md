@@ -928,80 +928,126 @@ try {
 | `try-catch-finally` | Standard block |
 | `try-with-resources` | Auto-close resources |
 
----
 
-## ✅ Core Java: Java Memory Model (JMM)
-
----
-
-### 🔹 What is the Java Memory Model?
-
-The **Java Memory Model (JMM)** defines **how Java handles memory at runtime**:
-- How threads interact with memory.
-- How variables are read/written to main memory vs. local caches.
-- How the JVM organizes memory areas for execution.
-
-Understanding the JMM is key for:
-- Writing **thread-safe** code.
-- Tuning performance.
-- Debugging memory leaks and GC issues.
+# ✅ Java Memory Model (JMM) — Detailed JVM Memory Areas
 
 ---
 
-### 🔹 Key Memory Areas
+## 🔹 What is the Java Memory Model?
 
-#### ✅ 1️⃣ Stack Memory
+The **Java Memory Model (JMM)** defines **how threads interact with memory** — it describes how variables are stored, read, written, and how changes become visible across threads.
 
-- Each **thread** has its **own stack**.
-- Stores:
-  - Method calls (stack frames).
-  - Local variables.
-  - References to objects (actual objects are on the heap).
-- Grows/shrinks automatically with method calls/returns.
-
-> **Pitfall:** `StackOverflowError` → when recursion is too deep.
+The JVM implements this with **well-defined runtime memory areas**.
 
 ---
 
-#### ✅ 2️⃣ Heap Memory
+## ✅ JVM Runtime Memory Areas
 
-- **Shared** among all threads.
-- Stores **objects** and **instance variables**.
-- Managed by **Garbage Collector (GC)**.
+| Memory Area        | Purpose                                   | Scope                |
+|--------------------|-------------------------------------------|----------------------|
+| **Method Area**    | Class metadata, static fields, bytecode   | Shared across threads |
+| **Heap**           | Objects, instance data                    | Shared across threads |
+| **Stack**          | Local variables, method calls             | One per thread       |
+| **PC Register**    | Address of current executing instruction  | One per thread       |
+| **Native Stack**   | Native method calls via JNI               | One per thread       |
+
+---
+
+## 🔹 1️⃣ Method Area (Metaspace)
+
+- Stores **class metadata**, method bytecode, static variables, runtime constant pool.
+- **HotSpot JVM (Java 8+)** uses **Metaspace** instead of PermGen — dynamically grows with native memory.
+- Example: `class MyClass {}` → bytecode & structure stored here.
+- Shared by all threads.
+
+---
+
+## 🔹 2️⃣ Heap
+
+- Runtime area for **all objects** and **instance variables**.
+- Managed by the **Garbage Collector (GC)**.
 - Divided into:
-  - **Young Generation (Eden, Survivor spaces):** Short-lived objects.
-  - **Old Generation (Tenured):** Long-lived objects.
-  - **Metaspace (Java 8+):** Class metadata (replaces PermGen).
+  - **Young Generation**: Eden + Survivor spaces for short-lived objects.
+  - **Old Generation (Tenured)**: Long-lived objects.
+  - **Humongous Objects**: Large buffers/arrays (G1 GC).
+- Shared by all threads.
 
----
-
-### 🔹 JVM Memory Areas Overview
-
-| Area | What it holds |
-|------|----------------|
-| **Heap** | Objects, instance variables |
-| **Stack** | Local vars, method calls, references |
-| **Method Area (Metaspace)** | Class metadata |
-| **PC Register** | Current instruction for each thread |
-| **Native Method Stack** | For native (JNI) calls |
-
----
-
-### 🔹 Example
-
+Example:
 ```java
-public class MemoryExample {
-    int num = 10;           // stored on heap with the object
-    static int count = 0;   // stored in method area (static)
-
-    public void doSomething() {
-        int local = 5;      // stored in stack frame
-        MemoryExample obj = new MemoryExample(); // obj ref in stack, object in heap
-    }
-}
+String s = new String("abc"); // Heap allocated
 ```
 
 ---
+
+## 🔹 3️⃣ Java Stack
+
+- Each thread has its **own JVM stack**.
+- Stores **stack frames**:
+  - Local variables
+  - Operand stack
+  - Return addresses
+- **Primitive variables & references** live here. (Objects themselves → Heap)
+
+Thread-confined → naturally thread-safe.
+
+---
+
+## 🔹 4️⃣ PC Register
+
+- Each thread has its own **Program Counter (PC)**.
+- Holds the address of the **current JVM instruction** being executed.
+- Crucial for managing method calls and branch execution.
+
+---
+
+## 🔹 5️⃣ Native Method Stack
+
+- Supports **native method execution** (`JNI`).
+- Stores local variables, return addresses for native code.
+- One per thread.
+
+---
+
+## 🔹 📌 How JMM and JVM Memory Areas Connect
+
+- **Heap + Method Area** → Shared → multiple threads can access same data.
+- **Stack + PC Register + Native Stack** → Thread-local → no shared data → no race conditions.
+
+**JMM** ensures:
+- **Visibility:** One thread’s write visible to others (`volatile`/locks).
+- **Atomicity:** Operations done fully or not at all.
+- **Ordering:** Prevents unsafe reorderings.
+
+---
+
+## 🔹 ⚙️ Best Practices & Tuning
+
+✅ **GC tuning:**  
+- `-Xms` / `-Xmx` → Initial / max heap.
+- `-XX:MaxMetaspaceSize` → Cap Metaspace.
+
+✅ **Memory leaks:**  
+- Release object references you no longer need.
+
+✅ **Use local variables:**  
+- Faster, GC-free → stored on stack.
+
+✅ **Tools:**  
+- `jmap`, `jconsole`, `VisualVM`, `Flight Recorder` → Monitor memory usage.
+
+---
+
+## ✨ Key Takeaway
+
+The **Java Memory Model** and JVM memory areas together ensure:
+- Automatic memory management.
+- Thread safety.
+- High performance for modern multi-threaded apps.
+
+Mastering them means writing **efficient, safe, maintainable Java code**.
+
+---
+
 
 ### 🔹 Garbage Collection (GC)
 

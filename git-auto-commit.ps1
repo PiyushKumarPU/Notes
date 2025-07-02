@@ -32,4 +32,4 @@ git push
 # ----------------------------------------
 # Done!
 # ----------------------------------------
-Write-Host "`n✅ Git operations completed successfully!"
+Write-Host "`n Git operations completed successfully!"
