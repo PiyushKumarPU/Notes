@@ -1,4 +1,4 @@
-## ✅ Singleton Pattern — Detailed Revision Notes
+## ✅ Singleton Pattern 
 
 ### 📌 Definition
 
@@ -183,7 +183,7 @@ public enum EnumSingleton {
 
 ---
 
-## ✅ Factory Pattern — Detailed Revision Notes
+## ✅ Factory Pattern 
 
 ### 📌 Definition
 Defines an interface for creating an object but lets subclasses decide which class to instantiate. It centralizes object creation logic.
@@ -246,7 +246,7 @@ class ShapeFactory {
 
 ---
 
-## ✅ Abstract Factory Pattern — Detailed Revision Notes
+## ✅ Abstract Factory Pattern 
 
 ### 📌 Definition
 
@@ -309,7 +309,7 @@ class MacFactory implements GUIFactory {
 
 ---
 
-## ✅ Builder Pattern — Detailed Revision Notes
+## ✅ Builder Pattern 
 
 ### 📌 Definition
 Separates the construction of a complex object from its representation so that the same construction process can create different representations.
@@ -389,7 +389,7 @@ class User {
 
 ---
 
-## ✅ Prototype Pattern — Detailed Revision Notes
+## ✅ Prototype Pattern 
 
 ### 📌 Definition
 Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
@@ -442,7 +442,7 @@ class Document implements Prototype {
 
 ---
 
-## ✅ Adapter Pattern — Detailed Revision Notes
+## ✅ Adapter Pattern 
 
 ### 📌 Definition
 
@@ -509,7 +509,7 @@ class Adapter implements Target {
 
 ---
 
-## ✅ Decorator Pattern — Detailed Revision Notes
+## ✅ Decorator Pattern 
 
 ### 📌 Definition
 Decorator Pattern allows behavior to be added to an individual object dynamically, without affecting the behavior of other objects from the same class.
@@ -571,7 +571,7 @@ class SMSDecorator implements Notifier {
 
 ---
 
-## ✅ Proxy Pattern — Detailed Revision Notes
+## ✅ Proxy Pattern 
 
 ### 📌 Definition
 Proxy Pattern provides a surrogate or placeholder for another object to control access to it.
@@ -608,7 +608,7 @@ class SecurityProxy implements Service {
 
 ---
 
-## ✅ Composite Pattern — Detailed Revision Notes
+## ✅ Composite Pattern 
 
 ### 📌 Definition
 Composite Pattern lets clients treat individual objects and compositions of objects uniformly.
@@ -643,7 +643,7 @@ class Directory implements FileSystem {
 
 ---
 
-## ✅ Facade Pattern — Detailed Revision Notes
+## ✅ Facade Pattern 
 
 ### 📌 Definition
 Facade Pattern provides a simplified interface to a complex subsystem.
@@ -666,7 +666,7 @@ class VideoConversionFacade {
 
 ---
 
-## ✅ Strategy Pattern — Detailed Revision Notes
+## ✅ Strategy Pattern 
 
 ### 📌 Definition
 Strategy Pattern defines a family of algorithms, encapsulates each, and makes them interchangeable.
@@ -690,7 +690,7 @@ class PaypalPayment implements PaymentStrategy {
 
 ---
 
-## ✅ Observer Pattern — Detailed Revision Notes
+## ✅ Observer Pattern 
 
 ### 📌 Definition
 Observer Pattern defines a one-to-many dependency between objects.
@@ -720,7 +720,7 @@ class Subject {
 
 ---
 
-## ✅ Command Pattern — Detailed Revision Notes
+## ✅ Command Pattern 
 
 ### 📌 Definition
 Command Pattern encapsulates a request as an object, letting you parametrize clients with requests.
@@ -746,7 +746,7 @@ class LightOnCommand implements Command {
 
 ---
 
-## ✅ Chain of Responsibility — Detailed Revision Notes
+## ✅ Chain of Responsibility 
 
 ### 📌 Definition
 Chain of Responsibility lets you pass a request along a chain of handlers.
@@ -771,7 +771,7 @@ class AuthHandler extends Handler {
 
 ---
 
-## ✅ Template Method — Detailed Revision Notes
+## ✅ Template Method 
 
 ### 📌 Definition
 Template Method defines the program skeleton and lets subclasses redefine certain steps.
@@ -795,7 +795,7 @@ abstract class DataProcessor {
 
 ---
 
-## ✅ State Pattern — Detailed Revision Notes
+## ✅ State Pattern 
 
 ### 📌 Definition
 State Pattern lets an object alter its behavior when its internal state changes.
