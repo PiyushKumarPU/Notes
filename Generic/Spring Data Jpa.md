@@ -1,7 +1,5 @@
 
-# ✅ Spring Data JPA — Senior-Level Q&A Full Reference
-
-This covers **ALL Spring Data JPA questions** we discussed in depth.
+# ✅ Spring Data JPA
 
 ---
 
@@ -199,6 +197,3 @@ class UserRepoTest {
 ```
 
 ---
-
-## ✅ That’s the complete Spring Data JPA senior Q&A!
-

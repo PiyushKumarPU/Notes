@@ -1,4 +1,4 @@
-# ✅ Java Collections — Senior-Level Q&A Cheat Sheet
+# ✅ Java Collections
 
 ## 1️⃣ ArrayList vs LinkedList
 **Q:** Difference? When to use which?
@@ -174,5 +174,3 @@ public class LazyBigList<T> extends AbstractList<T> {
 - Keeps memory usage low while providing standard Java Collection APIs.
 
 ---
-
-✅ *This cheat sheet covers 15 advanced Java Collections questions & answers.*

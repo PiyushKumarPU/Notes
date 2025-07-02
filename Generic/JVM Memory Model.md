@@ -1,6 +1,5 @@
 
-## ✅ JVM & Memory Model — Senior Developer Interview Notes
-
+## ✅ JVM & Memory Model
 ---
 
 ### 🔹 What is the JVM?
@@ -167,9 +166,5 @@ java -Xmx2G -Xms2G -XX:+UseG1GC -Xlog:gc* MyApp
 | **JIT** | Compiles hot bytecode to native. |
 
 ✅ **Life cycle:** Load → Verify → Prepare → Resolve → Initialize → Execute → GC.
-
----
-
-**This is the deep, clear JVM + Memory Model + GC insight expected at senior interviews.**
 
 ---

@@ -1,7 +1,5 @@
 
-# ✅ Spring Boot — Senior-Level Q&A Cheat Sheet
-
-This covers 15 core Spring & Spring Boot interview questions and answers.
+# ✅ Spring Boot
 
 ---
 
@@ -156,5 +154,3 @@ Never for production — only for local dev.
 ✅ Use `REQUIRES_NEW` for **audit logs** to ensure logs persist even if the main TX rolls back.
 
 ---
-
-This cheat sheet covers the **core Spring Boot interview essentials** for experienced backend engineers.
