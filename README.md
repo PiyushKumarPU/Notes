@@ -14,6 +14,10 @@ Below is the index of topics included in this repository:
 - [Spring Boot](./Generic/Spring%20Boot.md)
 - [Spring Data JPA](./Generic/Spring%20Data%20Jpa.md)
 
+## LLD
+- [Design Patterns](./LLD/design%20patterns/desing%20pattern.md)
+- [UML](./LLD/UML/uml.md)
+
 ---
 
 ## ✅ How to Use
