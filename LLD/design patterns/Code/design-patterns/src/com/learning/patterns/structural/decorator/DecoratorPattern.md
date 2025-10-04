@@ -30,45 +30,7 @@ These offers are **optional and change frequently**, so using the **Decorator Pa
 ---
 
 ## 📘 UML Diagram
-```plantuml
-@startuml
-title Decorator Pattern - Offer Application (FinTech Example)
-
-interface PaymentProcessor {
-    + processPayment(amount : double) : void
-}
-
-class BasicPaymentProcessor implements PaymentProcessor {
-    + processPayment(amount : double) : void
-}
-
-abstract class OfferDecorator implements PaymentProcessor {
-    # wrappedProcessor : PaymentProcessor
-    + OfferDecorator(processor : PaymentProcessor)
-    + processPayment(amount : double) : void
-}
-
-class FestivalOfferDecorator extends OfferDecorator {
-    + processPayment(amount : double) : void
-}
-
-class CashbackOfferDecorator extends OfferDecorator {
-    + processPayment(amount : double) : void
-}
-
-class OfferApplicationDemo {
-    + main(args : String[]) : void
-}
-
-PaymentProcessor <|.. BasicPaymentProcessor
-PaymentProcessor <|.. OfferDecorator
-OfferDecorator <|-- FestivalOfferDecorator
-OfferDecorator <|-- CashbackOfferDecorator
-OfferDecorator --> PaymentProcessor
-OfferApplicationDemo --> PaymentProcessor
-
-@enduml
-```
+![UML](decorator-Decorator_Design_Pattern___Offer_Application__FinTech_Example_.png)
 
 ---
 

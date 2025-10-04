@@ -22,48 +22,7 @@ Instead of coupling these services tightly, the payment service simply **notifie
 
 ## 📘 UML Diagram
 
-```plantuml
-@startuml
-title Observer Design Pattern - UPI Payment Event Notification
-
-interface Observer {
-    + update(transactionId : String, status : String) : void
-}
-
-interface Subject {
-    + registerObserver(observer : Observer) : void
-    + removeObserver(observer : Observer) : void
-    + notifyObservers(transactionId : String, status : String) : void
-}
-
-class UpiPaymentService implements Subject {
-    - observers : List<Observer>
-    + registerObserver(observer : Observer) : void
-    + removeObserver(observer : Observer) : void
-    + notifyObservers(transactionId : String, status : String) : void
-    + completePayment(transactionId : String) : void
-}
-
-class UserNotificationService implements Observer {
-    + update(transactionId : String, status : String) : void
-}
-
-class MerchantDashboardService implements Observer {
-    + update(transactionId : String, status : String) : void
-}
-
-class NPCISettlementService implements Observer {
-    + update(transactionId : String, status : String) : void
-}
-
-UpiPaymentService --> Observer : notifies >
-Observer <|.. UserNotificationService
-Observer <|.. MerchantDashboardService
-Observer <|.. NPCISettlementService
-Subject <|.. UpiPaymentService
-
-@enduml
-```
+![UML](obswerver-Observer_Design_Pattern___UPI_Payment_Event_Notification.png)
 
 ---
 

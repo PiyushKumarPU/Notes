@@ -3,6 +3,10 @@
 This document explains the **Factory Method** and **Abstract Factory** patterns using the EMI Loan Calculator example.
 
 ---
+# UML
+![UML](factory-Factory_Pattern__EMI_Calculator_Example_.png)
+
+---
 
 ## 🔹 Factory Method Pattern
 

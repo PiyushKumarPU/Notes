@@ -6,6 +6,11 @@ This file contains **all major implementations** of Singleton in Java.
 
 ---
 
+## UML diagram
+![UML](singleton-Singleton_Pattern__Bill_Pugh_Example_.png)
+
+---
+
 ## 1. Basic Singleton (Not Thread-Safe)
 ```java
 /*
@@ -189,7 +194,6 @@ public enum EnumSingleton {
 ```
 
 ---
-
 # 🔎 Comparison of Implementations
 
 | Approach                 | Lazy? | Thread-Safe? | Performance | Notes |

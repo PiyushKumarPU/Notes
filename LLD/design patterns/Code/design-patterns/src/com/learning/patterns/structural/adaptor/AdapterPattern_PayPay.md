@@ -21,51 +21,7 @@ It allows classes with incompatible interfaces to work together.
 
 ## 🔹 Class Diagram (UML)
 
-```plantuml
-@startuml
-title Adapter Pattern - PayPay using Japanese Banks
-
-interface PaymentGateway {
-    + pay(amount : double) : String
-}
-
-class PayPayPaymentAdapter implements PaymentGateway {
-    - bankApi : JapaneseBankAPI
-    + PayPayPaymentAdapter(bankApi : JapaneseBankAPI)
-    + pay(amount : double) : String
-}
-
-interface JapaneseBankAPI {
-    + processYenPayment(yen : double) : String
-}
-
-class MizuhoBankAPI implements JapaneseBankAPI {
-    + processYenPayment(yen : double) : String
-}
-
-class MUFGBankAPI implements JapaneseBankAPI {
-    + processYenPayment(yen : double) : String
-}
-
-class SMBCBankAPI implements JapaneseBankAPI {
-    + processYenPayment(yen : double) : String
-}
-
-class PayPayClient {
-    - gateway : PaymentGateway
-    + PayPayClient(gateway : PaymentGateway)
-    + makePayment(amount : double)
-}
-
-PaymentGateway <|.. PayPayPaymentAdapter
-PayPayPaymentAdapter --> JapaneseBankAPI
-JapaneseBankAPI <|.. MizuhoBankAPI
-JapaneseBankAPI <|.. MUFGBankAPI
-JapaneseBankAPI <|.. SMBCBankAPI
-PayPayClient --> PaymentGateway
-
-@enduml
-```
+![UML](adaptor-Adapter_Pattern___Fintech_Example__PayPay_using_Japanese_Banks_.png)
 
 ---
 

@@ -19,46 +19,7 @@ This lets you:
 ---
 
 ## 🔹 UML Diagram
-```plantuml
-@startuml
-title Command Design Pattern - Bank Transaction Example
-
-interface TransactionCommand {
-    + execute() : void
-    + undo() : void
-}
-
-class DepositCommand implements TransactionCommand {
-    - account : BankAccount
-    - amount : double
-}
-
-class WithdrawCommand implements TransactionCommand {
-    - account : BankAccount
-    - amount : double
-}
-
-class BankAccount {
-    - accountNumber : String
-    - balance : double
-    + deposit(amount : double) : void
-    + withdraw(amount : double) : void
-}
-
-class TransactionInvoker {
-    - history : List<TransactionCommand>
-    + executeCommand(cmd : TransactionCommand) : void
-    + undoLastCommand() : void
-}
-
-TransactionCommand <|.. DepositCommand
-TransactionCommand <|.. WithdrawCommand
-DepositCommand --> BankAccount
-WithdrawCommand --> BankAccount
-TransactionInvoker --> TransactionCommand
-
-@enduml
-```
+![UML](command-Command_Design_Pattern___Bank_Transaction_Example.png)
 
 ---
 

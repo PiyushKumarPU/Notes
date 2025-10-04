@@ -21,63 +21,7 @@ The **Flyweight Pattern** allows us to **reuse shared card metadata** across tra
 
 ## 📘 UML Diagram
 
-```plantuml
-@startuml
-title Flyweight Design Pattern - Card Metadata Optimization (FinTech Example)
-
-interface CardFlyweight {
-    + displayCardDetails(extrinsicData : CardExtrinsicData) : void
-}
-
-class ConcreteCardFlyweight implements CardFlyweight {
-    - bankName : String
-    - cardType : String
-    - currency : String
-    - issuerCountry : String
-    + displayCardDetails(extrinsicData : CardExtrinsicData) : void
-}
-
-class CardExtrinsicData {
-    + cardNumber : String
-    + expiryDate : String
-    + cvv : String
-    + customerId : String
-}
-
-class CardFlyweightFactory {
-    - flyweights : Map<String, CardFlyweight>
-    + getCardFlyweight(bankName : String, cardType : String, currency : String, issuerCountry : String) : CardFlyweight
-    + getTotalFlyweights() : int
-}
-
-class PaymentProcessorClient {
-    + main(args : String[]) : void
-}
-
-CardFlyweight <|.. ConcreteCardFlyweight
-CardFlyweightFactory --> CardFlyweight : creates & manages >
-ConcreteCardFlyweight --> CardExtrinsicData : uses >
-PaymentProcessorClient --> CardFlyweightFactory : requests >
-PaymentProcessorClient --> CardExtrinsicData : creates >
-
-note right of ConcreteCardFlyweight
-Intrinsic (shared) state:
-- Bank Name
-- Card Type
-- Currency
-- Issuer Country
-end note
-
-note right of CardExtrinsicData
-Extrinsic (unique) state:
-- Card Number
-- Expiry Date
-- CVV
-- Customer ID
-end note
-
-@enduml
-```
+![UML](flyweight-Flyweight_Design_Pattern___Card_Metadata_Optimization__FinTech_Example_.png)
 
 ---
 

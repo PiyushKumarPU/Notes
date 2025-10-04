@@ -7,6 +7,12 @@ In this example, we implement different **payment strategies** (`CreditCard`, `D
 
 ---
 
+## 📘 UML Diagram
+
+![UML](strategy-Strategy_Pattern___Payment_Example.png)
+
+---
+
 ## 🔹 Strategy Interface
 
 ```java

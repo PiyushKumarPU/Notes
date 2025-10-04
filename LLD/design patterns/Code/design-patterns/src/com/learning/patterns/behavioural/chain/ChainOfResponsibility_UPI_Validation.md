@@ -23,59 +23,8 @@ Each check can approve, reject, or pass the request forward.
 ---
 
 ## 📘 UML Diagram
+![UML](chainofresp-Chain_of_Responsibility___UPI_Transaction_Validation.png)
 
-```plantuml
-@startuml
-title Chain of Responsibility - UPI Transaction Validation
-
-interface PaymentHandler {
-    + setNext(handler : PaymentHandler) : void
-    + handle(request : PaymentRequest) : void
-}
-
-abstract class BaseHandler implements PaymentHandler {
-    - nextHandler : PaymentHandler
-    + setNext(handler : PaymentHandler) : void
-    # passToNext(request : PaymentRequest) : void
-}
-
-class AmountLimitHandler extends BaseHandler {
-    + handle(request : PaymentRequest) : void
-}
-
-class BalanceHandler extends BaseHandler {
-    + handle(request : PaymentRequest) : void
-}
-
-class KYCHandler extends BaseHandler {
-    + handle(request : PaymentRequest) : void
-}
-
-class FraudHandler extends BaseHandler {
-    + handle(request : PaymentRequest) : void
-}
-
-class PaymentRequest {
-    + amount : double
-    + balance : double
-    + isKYCVerified : boolean
-    + isFraudulent : boolean
-}
-
-class ChainOfResponsibilityDemo {
-    + main(args : String[]) : void
-}
-
-PaymentHandler <|.. BaseHandler
-BaseHandler <|-- AmountLimitHandler
-BaseHandler <|-- BalanceHandler
-BaseHandler <|-- KYCHandler
-BaseHandler <|-- FraudHandler
-ChainOfResponsibilityDemo --> PaymentRequest
-ChainOfResponsibilityDemo --> PaymentHandler
-
-@enduml
-```
 
 ---
 

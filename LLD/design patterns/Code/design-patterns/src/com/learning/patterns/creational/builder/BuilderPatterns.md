@@ -4,6 +4,11 @@ This document demonstrates different ways to implement the **Builder Design Patt
 
 ---
 
+## UML diagram
+![UML](builder-Builder_Pattern__Candidate_Example_.png)
+
+---
+
 ## 1. Classic Nested Static Builder
 
 ```java
