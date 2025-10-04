@@ -1,0 +1,64 @@
+@startuml
+title Adapter Pattern - Fintech Example (PayPay using Japanese Banks)
+
+/'
+ PayPay wants to process payments
+ through different Japanese banks.
+ Each bank exposes its own API (Adaptee),
+ so we need an Adapter to unify them.
+'/
+
+interface PaymentGateway {
+    + pay(amount : double) : String
+}
+
+class PayPayPaymentAdapter implements PaymentGateway {
+    - bankApi : JapaneseBankAPI
+    + PayPayPaymentAdapter(bankApi : JapaneseBankAPI)
+    + pay(amount : double) : String
+}
+
+interface JapaneseBankAPI {
+    + processYenPayment(yen : double) : String
+}
+
+class MizuhoBankAPI implements JapaneseBankAPI {
+    + processYenPayment(yen : double) : String
+}
+
+class MUFGBankAPI implements JapaneseBankAPI {
+    + processYenPayment(yen : double) : String
+}
+
+class SMBCBankAPI implements JapaneseBankAPI {
+    + processYenPayment(yen : double) : String
+}
+
+class PayPayClient {
+    - gateway : PaymentGateway
+    + PayPayClient(gateway : PaymentGateway)
+    + makePayment(amount : double)
+}
+
+PaymentGateway <|.. PayPayPaymentAdapter
+PayPayPaymentAdapter --> JapaneseBankAPI
+JapaneseBankAPI <|.. MizuhoBankAPI
+JapaneseBankAPI <|.. MUFGBankAPI
+JapaneseBankAPI <|.. SMBCBankAPI
+PayPayClient --> PaymentGateway
+
+note top of PaymentGateway
+Target: Unified interface for PayPay
+end note
+
+note top of PayPayPaymentAdapter
+Adapter: Translates PayPay requests
+into Japanese bank API calls
+end note
+
+note top of JapaneseBankAPI
+Adaptee interface:
+Each bank has its own implementation
+end note
+
+@enduml

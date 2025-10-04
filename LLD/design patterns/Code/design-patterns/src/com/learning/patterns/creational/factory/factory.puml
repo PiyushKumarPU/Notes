@@ -1,0 +1,28 @@
+@startuml
+title Factory Pattern (EMI Calculator Example)
+
+interface EmiCalculator {
+    + calculateEmi(principal : double, rate : double, tenure : int) : double
+}
+
+class PersonalLoanEmiCalculator implements EmiCalculator
+class CarLoanEmiCalculator implements EmiCalculator
+class HomeLoanEmiCalculator implements EmiCalculator
+
+class EmiCalculatorFactory {
+    + getEmiCalculator(type : LoanType) : EmiCalculator
+}
+
+enum LoanType {
+    PERSONAL
+    CAR
+    HOME
+}
+
+EmiCalculator <|.. PersonalLoanEmiCalculator
+EmiCalculator <|.. CarLoanEmiCalculator
+EmiCalculator <|.. HomeLoanEmiCalculator
+EmiCalculatorFactory --> EmiCalculator
+EmiCalculatorFactory --> LoanType
+
+@enduml

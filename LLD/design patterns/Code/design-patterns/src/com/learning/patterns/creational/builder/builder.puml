@@ -1,0 +1,32 @@
+@startuml
+title Builder Pattern (Candidate Example)
+
+class Candidate {
+    - firstName : String
+    - lastName : String
+    - age : int
+    - email : String
+    --
+    {static} CandidateBuilder : CandidateBuilder
+}
+
+class CandidateBuilder {
+    - firstName : String
+    - lastName : String
+    - age : int
+    - email : String
+    --
+    + firstName(name : String) : CandidateBuilder
+    + lastName(name : String) : CandidateBuilder
+    + age(age : int) : CandidateBuilder
+    + email(email : String) : CandidateBuilder
+    + build() : Candidate
+}
+
+Candidate --> CandidateBuilder : built via
+
+note top of CandidateBuilder
+Fluent API for constructing Candidate
+end note
+
+@enduml

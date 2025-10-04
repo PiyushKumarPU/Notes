@@ -1,0 +1,20 @@
+@startuml
+title Singleton Pattern (Bill Pugh Example)
+
+class BillPughSingleton {
+    - BillPughSingleton()
+    + getInstance() : BillPughSingleton
+}
+
+class SingletonHelper {
+    {static} INSTANCE : BillPughSingleton
+}
+
+BillPughSingleton --> SingletonHelper : uses
+
+note top of BillPughSingleton
+- Ensures only one instance
+- Thread-safe, lazy-loaded
+end note
+
+@enduml

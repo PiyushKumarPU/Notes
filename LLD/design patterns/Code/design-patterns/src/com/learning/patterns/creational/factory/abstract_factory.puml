@@ -1,0 +1,54 @@
+@startuml
+title Abstract Factory Pattern (Loan Example)
+
+interface EmiCalculator {
+    + calculateEmi(principal : double, rate : double, tenure : int) : double
+}
+
+interface LoanDocument {
+    + getDocument() : String
+}
+
+class PersonalLoanEmiCalculator implements EmiCalculator
+class CarLoanEmiCalculator implements EmiCalculator
+class HomeLoanEmiCalculator implements EmiCalculator
+
+class PersonalLoanDocument implements LoanDocument
+class CarLoanDocument implements LoanDocument
+class HomeLoanDocument implements LoanDocument
+
+interface LoanFactory {
+    + createEmiCalculator() : EmiCalculator
+    + createLoanDocument() : LoanDocument
+}
+
+class PersonalLoanFactory implements LoanFactory
+class CarLoanFactory implements LoanFactory
+class HomeLoanFactory implements LoanFactory
+
+class LoanFactoryProducer {
+    + getLoanFactory(type : LoanType) : LoanFactory
+}
+
+enum LoanType {
+    PERSONAL
+    CAR
+    HOME
+}
+
+LoanFactory <|.. PersonalLoanFactory
+LoanFactory <|.. CarLoanFactory
+LoanFactory <|.. HomeLoanFactory
+
+EmiCalculator <|.. PersonalLoanEmiCalculator
+EmiCalculator <|.. CarLoanEmiCalculator
+EmiCalculator <|.. HomeLoanEmiCalculator
+
+LoanDocument <|.. PersonalLoanDocument
+LoanDocument <|.. CarLoanDocument
+LoanDocument <|.. HomeLoanDocument
+
+LoanFactoryProducer --> LoanFactory
+LoanFactoryProducer --> LoanType
+
+@enduml

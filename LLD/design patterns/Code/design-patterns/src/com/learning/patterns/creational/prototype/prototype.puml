@@ -1,0 +1,45 @@
+@startuml
+title Prototype Pattern (Candidate & Employee Example)
+
+interface BasePrototype {
+    + clone() : BasePrototype
+}
+
+class CandidatePrototype implements BasePrototype {
+    - name : String
+    - interviewLocation : String
+    - skills : List<String>
+    + CandidatePrototype()
+    + CandidatePrototype(name : String, location : String, skills : List<String>)
+    + getName() : String
+    + getInterviewLocation() : String
+    + getSkills() : List<String>
+    + clone() : BasePrototype
+}
+
+class EmployeePrototype implements BasePrototype {
+    - name : String
+    - company : String
+    - metadata : Map<String,String>
+    + EmployeePrototype()
+    + EmployeePrototype(name : String, company : String, metadata : Map<String,String>)
+    + getName() : String
+    + getCompany() : String
+    + getMetadata() : Map<String,String>
+    + clone() : BasePrototype
+}
+
+BasePrototype <|.. CandidatePrototype
+BasePrototype <|.. EmployeePrototype
+
+note top of CandidatePrototype
+Immutable: name, interviewLocation
+Mutable: skills (deep copied)
+end note
+
+note top of EmployeePrototype
+Immutable: name, company
+Mutable: metadata (deep copied)
+end note
+
+@enduml

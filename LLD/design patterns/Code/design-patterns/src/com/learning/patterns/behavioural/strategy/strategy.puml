@@ -1,0 +1,36 @@
+@startuml
+title Strategy Pattern - Payment Example
+
+interface PaymentStrategy {
+    + makePayment(amount : double) : String
+}
+
+class CreditCardPaymentStrategy implements PaymentStrategy {
+    + makePayment(amount : double) : String
+}
+
+class DebitCardPaymentStrategy implements PaymentStrategy {
+    + makePayment(amount : double) : String
+}
+
+class UPIPaymentStrategy implements PaymentStrategy {
+    + makePayment(amount : double) : String
+}
+
+enum PaymentType {
+    CREDIT
+    DEBIT
+    UPI
+}
+
+class PaymentStrategyFactory {
+    + getPaymentStrategy(type : PaymentType) : PaymentStrategy
+}
+
+PaymentStrategy <|.. CreditCardPaymentStrategy
+PaymentStrategy <|.. DebitCardPaymentStrategy
+PaymentStrategy <|.. UPIPaymentStrategy
+
+PaymentStrategyFactory --> PaymentStrategy
+
+@enduml

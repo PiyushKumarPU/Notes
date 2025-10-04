@@ -1,0 +1,52 @@
+@startuml
+title Template Method Design Pattern - FinTech Payment Processing Flow
+
+abstract class PaymentProcessorTemplate {
+    + processPayment() : void
+    # validatePayment() : void
+    # authenticateUser() : void
+    # processTransaction() : void
+    # sendNotification() : void
+}
+
+class UPIPaymentProcessor extends PaymentProcessorTemplate {
+    + validatePayment() : void
+    + authenticateUser() : void
+    + processTransaction() : void
+    + sendNotification() : void
+}
+
+class CardPaymentProcessor extends PaymentProcessorTemplate {
+    + validatePayment() : void
+    + authenticateUser() : void
+    + processTransaction() : void
+    + sendNotification() : void
+}
+
+class PaymentClient {
+    + main(args : String[]) : void
+}
+
+PaymentProcessorTemplate <|-- UPIPaymentProcessor
+PaymentProcessorTemplate <|-- CardPaymentProcessor
+PaymentClient --> PaymentProcessorTemplate : uses >
+
+note right of PaymentProcessorTemplate
+Defines the "template method" processPayment():
+  1. validatePayment()
+  2. authenticateUser()
+  3. processTransaction()
+  4. sendNotification()
+Subclasses implement each step
+without changing the order.
+end note
+
+note bottom of UPIPaymentProcessor
+UPI-specific validation and authentication
+end note
+
+note bottom of CardPaymentProcessor
+Card-based transaction handling (e.g., CVV, OTP)
+end note
+
+@enduml

@@ -1,0 +1,45 @@
+@startuml
+title Command Design Pattern - Bank Transaction Example
+
+interface TransactionCommand {
+    + execute() : void
+    + undo() : void
+}
+
+class DepositCommand implements TransactionCommand {
+    - account : BankAccount
+    - amount : double
+    + DepositCommand(account : BankAccount, amount : double)
+    + execute() : void
+    + undo() : void
+}
+
+class WithdrawCommand implements TransactionCommand {
+    - account : BankAccount
+    - amount : double
+    + WithdrawCommand(account : BankAccount, amount : double)
+    + execute() : void
+    + undo() : void
+}
+
+class BankAccount {
+    - accountNumber : String
+    - balance : double
+    + deposit(amount : double) : void
+    + withdraw(amount : double) : void
+    + getBalance() : double
+}
+
+class TransactionInvoker {
+    - history : List<TransactionCommand>
+    + executeCommand(cmd : TransactionCommand) : void
+    + undoLastCommand() : void
+}
+
+TransactionCommand <|.. DepositCommand
+TransactionCommand <|.. WithdrawCommand
+DepositCommand --> BankAccount
+WithdrawCommand --> BankAccount
+TransactionInvoker --> TransactionCommand
+
+@enduml
