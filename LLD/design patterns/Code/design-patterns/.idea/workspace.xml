@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7bf00dc-cb89-47b0-b079-55decf2e2576" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/behavioural/chain/ChainOfResponsibility_UPI_Validation.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/behavioural/chain/ChainOfResponsibility_UPI_Validation.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/behavioural/command/CommandPattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/behavioural/command/CommandPattern.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/behavioural/observer/ObserverPattern_UPI_Payment.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/behavioural/observer/ObserverPattern_UPI_Payment.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/behavioural/strategy/StrategyPattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/behavioural/strategy/StrategyPattern.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/creational/builder/BuilderPatterns.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/creational/builder/BuilderPatterns.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/creational/factory/FactoryVsAbstractFactory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/creational/factory/FactoryVsAbstractFactory.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/creational/singleton/Singletons.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/creational/singleton/Singletons.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/structural/adaptor/AdapterPattern_PayPay.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/structural/adaptor/AdapterPattern_PayPay.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/structural/decorator/DecoratorPattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/structural/decorator/DecoratorPattern.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/structural/flyweight/FlyweightPattern_CardMetadata.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/structural/flyweight/FlyweightPattern_CardMetadata.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/design-patterns.iml" beforeDir="false" afterPath="$PROJECT_DIR$/design-patterns.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/behavioural/command/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/behavioural/command/BankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/creational/builder/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/creational/builder/Candidate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,31 +39,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.CandidateBuilderTester.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ChainOfResponsibilityDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.OfferApplicationDemo.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/repo/Notes/LLD/design patterns/Code/design-patterns/src/com/learning/patterns/behavioural/decorator&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;E:/repo/Notes/LLD/design patterns/Code/design-patterns/src/Main.java&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CandidateBuilderTester.executor": "Run",
+    "Application.ChainOfResponsibilityDemo.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.OfferApplicationDemo.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "OverrideImplement.generate.javadoc": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/repo/Notes/LLD/design patterns/Code/design-patterns/src/com/learning/patterns/behavioural/decorator",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "E:/repo/Notes/LLD/design patterns/Code/design-patterns/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\repo\Notes\LLD\design patterns\Code\design-patterns\src\com\learning\patterns\behavioural\decorator" />
@@ -160,7 +157,7 @@
       <workItem from="1759502747417" duration="3237000" />
       <workItem from="1759506038050" duration="5318000" />
       <workItem from="1759544740865" duration="8240000" />
-      <workItem from="1759567127090" duration="1421000" />
+      <workItem from="1759567127090" duration="1820000" />
     </task>
     <servers />
   </component>

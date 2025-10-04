@@ -1,9 +1,12 @@
 package com.learning.patterns.behavioural.command;
 
+import lombok.Getter;
+
 /*
  * Receiver: Bank Account
  * - Contains the actual business logic for deposit and withdraw.
  */
+@Getter
 public class BankAccount {
     private String accountNumber;
     private double balance;
@@ -25,9 +28,5 @@ public class BankAccount {
         } else {
             System.out.println("Insufficient funds for withdrawal of " + amount);
         }
-    }
-
-    public double getBalance() {
-        return balance;
     }
 }

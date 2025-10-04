@@ -1,13 +1,17 @@
 package com.learning.patterns.creational.builder;
 
+import lombok.Getter;
+
 import java.util.List;
 
 /*
  * Candidate class
  * Represents a job applicant with personal, professional, and skill details.
  */
+@Getter
 public class Candidate {
 
+    // --- Getters (you can keep or remove setters for immutability) ---
     // --- Personal Information ---
     private String firstName;
     private String lastName;
@@ -41,31 +45,6 @@ public class Candidate {
 
     // --- Private Constructor (only accessible via Builder) ---
     private Candidate() {}
-
-    // --- Getters (you can keep or remove setters for immutability) ---
-    public String getFirstName() { return firstName; }
-    public String getLastName() { return lastName; }
-    public int getAge() { return age; }
-    public String getGender() { return gender; }
-    public String getEmail() { return email; }
-    public String getPhone() { return phone; }
-    public String getAddress() { return address; }
-    public String getCity() { return city; }
-    public String getCountry() { return country; }
-    public String getHighestQualification() { return highestQualification; }
-    public int getYearsOfExperience() { return yearsOfExperience; }
-    public String getCurrentCompany() { return currentCompany; }
-    public String getCurrentPosition() { return currentPosition; }
-    public double getCurrentCTC() { return currentCTC; }
-    public double getExpectedCTC() { return expectedCTC; }
-    public int getNoticePeriodDays() { return noticePeriodDays; }
-    public List<String> getTechnicalSkills() { return technicalSkills; }
-    public List<String> getSoftSkills() { return softSkills; }
-    public List<String> getCertifications() { return certifications; }
-    public List<String> getLanguages() { return languages; }
-    public String getLinkedInProfile() { return linkedInProfile; }
-    public String getGithubProfile() { return githubProfile; }
-    public String getResumeFilePath() { return resumeFilePath; }
 
     // --- Builder Class ---
     public static class CandidateBuilder {
