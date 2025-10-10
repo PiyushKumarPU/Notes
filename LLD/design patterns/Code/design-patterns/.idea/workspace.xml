@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7bf00dc-cb89-47b0-b079-55decf2e2576" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-patterns.iml" beforeDir="false" afterPath="$PROJECT_DIR$/design-patterns.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/behavioural/command/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/behavioural/command/BankAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/creational/builder/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/creational/builder/Candidate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/learning/patterns/creational/builder/CandidateBuilderTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/learning/patterns/creational/builder/CandidateBuilderTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,34 +37,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CandidateBuilderTester.executor": "Run",
-    "Application.ChainOfResponsibilityDemo.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.OfferApplicationDemo.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "OverrideImplement.generate.javadoc": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/repo/Notes/LLD/design patterns/Code/design-patterns/src/com/learning/patterns/behavioural/decorator",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "E:/repo/Notes/LLD/design patterns/Code/design-patterns/src/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CandidateBuilderTester.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ChainOfResponsibilityDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OfferApplicationDemo.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/repo/Notes/LLD/design patterns/Code/design-patterns/src/com/learning/patterns/behavioural/decorator&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;E:/repo/Notes/LLD/design patterns/Code/design-patterns/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\repo\Notes\LLD\design patterns\Code\design-patterns\src\com\learning\patterns\behavioural\decorator" />
@@ -142,8 +140,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
-        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-IU-252.26199.169" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>
@@ -157,7 +155,10 @@
       <workItem from="1759502747417" duration="3237000" />
       <workItem from="1759506038050" duration="5318000" />
       <workItem from="1759544740865" duration="8240000" />
-      <workItem from="1759567127090" duration="1820000" />
+      <workItem from="1759567127090" duration="3184000" />
+      <workItem from="1759735839985" duration="2631000" />
+      <workItem from="1759751783886" duration="18000" />
+      <workItem from="1759820030239" duration="27000" />
     </task>
     <servers />
   </component>

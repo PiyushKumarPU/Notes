@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/LLD/design patterns/Code/design-patterns/jar/plantuml-1.2025.7-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/LLD/design patterns/Code/design-patterns/jar/lombok.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
