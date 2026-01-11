@@ -12,5 +12,5 @@ UML (Unified Modeling Language) is a standardized visual modeling language used 
 - **Behavioral Diagrams**: Use Case, Activity, Sequence, State Machine
 
 ### Important UML diagrams
-- [Class Digram](./class%20diagram.md)
-- [Use Case Digram](./use%20case%20diagram.md)
+- [Class Diagram](./class%20diagram.md)
+- [Use Case Diagram](./use%20case%20diagram.md)
